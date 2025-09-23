@@ -12,7 +12,7 @@ namespace Subjects {
       const { firstName, lastName, experienceTeachingC } = this.teacher;
 
       if (experienceTeachingC !== undefined && experienceTeachingC > 0)
-        return `Available Teacher: ${firstName} ${lastName}`;
+        return `Available Teacher: ${this.teacher.firstName}}`;
       return "No available teacher";
     }
   }
