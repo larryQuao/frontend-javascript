@@ -1,16 +1,19 @@
 namespace Subjects {
-    export class Cpp extends Subject {
-        teacher?: Teacher;
+  export interface Teacher {
+    experienceTeachingC?: number;
+  }
 
-        getRequirements(): string {
-            return `Here is the list of requirements for Cpp`;
-        }
-
-        getAvailableTeacher(): string {
-            if (!this.teacher || this.teacher.experinceTeachingC === undefined || this.teacher.experinceTeachingC <= 0) {
-                return `No available teacher`;
-            }
-            return `Available Teacher: ${this.teacher.firstName}`;
-        }
+  export class Cpp extends Subject {
+    getRequirements(): string {
+      return "Here is the list of requirements for Cpp";
     }
+
+    getAvailableTeacher(): string {
+      const { firstName, lastName, experienceTeachingC } = this.teacher;
+
+      if (experienceTeachingC !== undefined && experienceTeachingC > 0)
+        return `Available Teacher: ${firstName} ${lastName}`;
+      return "No available teacher";
+    }
+  }
 }

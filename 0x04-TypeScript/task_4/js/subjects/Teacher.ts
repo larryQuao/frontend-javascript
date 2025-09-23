@@ -1,9 +1,6 @@
 namespace Subjects {
-    export interface Teacher {
-        readonly firstName: string;
-        readonly lastName: string;
-        experienceTeachingJava?: number;
-        experienceTeachingReact?: number;
-        experinceTeachingC?: number;
-    }
+  export interface Teacher {
+    firstName: string;
+    lastName: string;
+  }
 }
